@@ -1,0 +1,25 @@
+src/
+  ├── components/
+  │   ├── layout/
+  │   │   ├── BottomNavigation.tsx
+  │   │   └── Layout.tsx
+  │   ├── calendar/
+  │   │   └── Calendar.tsx
+  │   ├── tasks/
+  │   │   └── TodoList.tsx
+  │   └── projects/
+  │       └── KanbanBoard.tsx
+  ├── pages/
+  │   ├── HomePage.tsx
+  │   ├── ProjectsPage.tsx
+  │   ├── CalendarPage.tsx
+  │   └── SettingsPage.tsx
+  ├── store/
+  │   ├── useTaskStore.ts
+  │   └── useThemeStore.ts
+  ├── types/
+  │   └── index.ts
+  ├── utils/
+  │   └── constants.ts
+  ├── App.tsx
+  └── main.tsx 
