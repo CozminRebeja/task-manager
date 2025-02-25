@@ -1,126 +1,166 @@
-# Time Blocking React App - Development Plan
+# TimeBlock - Task & Time Management App
 
-## 1. Project Overview
+A modern React application for managing tasks, time blocks, and projects with a focus on productivity and user experience.
 
-### Tech Stack:
-- **React**
-- **TypeScript**
-- **Tailwind CSS**
-- **React-Query**
-- **Zustand**
+## Features
 
-### Goal:
-Develop a **React-based time-blocking app** with task management features, including a split-screen home page with a calendar and to-do list, a Kanban-style project management system, and customizable project parameters.
+### Task Management
+- **Todo List**
+  - Create, edit, and delete tasks
+  - Set priority levels (low, medium, high)
+  - Add deadlines and descriptions
+  - Mark tasks as complete
+  - Sort by priority and completion status
 
-### Core Features:
-- **Homepage**: Split-screen layout with:
-  - A calendar displaying today’s **time blocks**.
-  - A **to-do list** with task actions (add, delete, prioritize, set deadlines, mark complete).
-- **Bottom Navigation:**
-  - **Home** (Calendar + To-Do List)
-  - **Projects** (Kanban Board with customizable project fields)
-  - **Full Calendar View** (Same as homepage calendar, but fullscreen)
-  - **Settings** (Account view & theme selector)
-- **Projects Tab (Kanban Board)**:
-  - Display project cards.
-  - Customizable project properties like **price, client, deadlines, deliverables** (similar to Notion’s database items).
-- **Settings**:
-  - Account information.
-  - Theme selector (light/dark mode).
+### Time Blocking
+- **Interactive Calendar**
+  - Daily and weekly views
+  - Create time blocks for tasks
+  - Drag and drop to adjust time blocks
+  - Color-coded based on task status
+  - Fullscreen calendar view available
 
----
+### Project Management
+- **Kanban Board**
+  - Drag and drop project cards
+  - Organize projects by status (todo, in-progress, done)
+  - Customizable project properties:
+    - Client information
+    - Price tracking
+    - Deadlines
+    - Deliverables
+    - Descriptions
 
-## 2. Tech Stack
+### User Interface
+- **Responsive Design**
+  - Mobile-first approach
+  - Desktop optimization
+  - Bottom navigation for mobile
+  - Top navigation for desktop
+- **Theme Support**
+  - Light/Dark mode toggle
+  - Persistent theme preference
+- **Accessibility**
+  - ARIA labels
+  - Keyboard navigation
+  - Screen reader support
 
-### **Frontend:**
-- **React (Next.js optional for SSR)**
-- **TypeScript**
-- **Tailwind CSS / Chakra UI / Material UI** (for styling)
-- **React-Query or SWR** (for data fetching)
-- **Redux Toolkit / Zustand** (for state management)
-- **FullCalendar.js or React Big Calendar** (for calendar UI)
-- **Dnd-Kit or React Beautiful DnD** (for Kanban drag-and-drop)
+### Data Management
+- **State Management**
+  - Zustand for global state
+  - Persistent storage
+  - Offline support
+- **Form Handling**
+  - React Hook Form integration
+  - Zod validation
+  - Error handling
 
-### **Backend:**
-- **Node.js + Express** or **Firebase** (if using serverless)
-- **PostgreSQL / SQLite / Firebase Firestore** (for database)
-- **Prisma** (ORM if using SQL)
-- **JWT (JSON Web Token)** (for authentication)
+## Tech Stack
 
-### **Additional:**
-- **React Hook Form / Zod** (for forms & validation)
-- **i18next** (for localization if needed)
-- **Styled Components / Framer Motion** (for animations)
+### Frontend
+- React 18
+- TypeScript
+- Tailwind CSS
+- FullCalendar.js
+- DnD Kit
+- React Router DOM
+- React Query
+- Zustand
+- React Hook Form + Zod
 
----
+### Development Tools
+- Vite
+- ESLint
+- Prettier
+- Vitest
+- React Testing Library
+- PWA Support
 
-## 3. Development Phases
+## Getting Started
 
-### **Phase 1: Project Setup & Infrastructure**
-- Initialize project with **Vite or Create React App**.
-- Set up **TypeScript, ESLint, Prettier**.
-- Install required dependencies.
-- Create basic **folder structure**:
-  ```
-  /src
-    /components
-    /pages
-    /hooks
-    /contexts
-    /store
-    /utils
-    /styles
-  ```
-- Configure **routing & navigation**.
+1. Clone the repository:
+```bash
+git clone [repository-url]
+```
 
----
+2. Install dependencies:
+```bash
+npm install
+```
 
-### **Phase 2: UI Components & Layout**
-- **Global Layout**:
-  - Implement **Bottom Navigation Bar**.
-  - Set up **Theme Selector** (dark/light mode).
-- **Homepage**:
-  - Create **Calendar Component** for time-blocking.
-  - Create **To-Do List Component** with CRUD operations.
-- **Projects (Kanban Board)**:
-  - Implement drag-and-drop functionality for project tasks.
-  - Create a **dynamic form** for customizable project parameters.
-- **Calendar Page**:
-  - Implement a fullscreen **calendar view** (same as homepage).
-- **Settings Page**:
-  - Build **Account View**.
-  - Implement **Theme Selector**.
+3. Start the development server:
+```bash
+npm run dev
+```
 
----
+4. Open http://localhost:5173 in your browser
 
-### **Phase 3: State Management & API Integration**
-- Choose **Redux Toolkit / Zustand** for global state management.
-- Integrate **SQLite/PostgreSQL with Prisma** (if using SQL).
-- Set up **API endpoints** (if backend needed).
-- Implement **authentication** (JWT / Firebase Auth).
+## Available Scripts
 
----
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run test` - Run tests
+- `npm run lint` - Lint code
+- `npm run format` - Format code
+- `npm run typecheck` - Check TypeScript
+- `npm run validate` - Run all checks
 
-### **Phase 4: Task & Project Management Features**
-- Add **priority, deadlines, and checkboxes** to tasks.
-- Enable **CRUD operations** for projects & tasks.
-- Implement **dynamic project properties** (similar to Notion).
-- Implement **local storage sync** for offline usage.
+## Project Structure
 
----
+```
+src/
+  ├── components/
+  │   ├── calendar/
+  │   ├── tasks/
+  │   ├── projects/
+  │   ├── layout/
+  │   └── common/
+  ├── pages/
+  │   ├── HomePage
+  │   ├── ProjectsPage
+  │   ├── CalendarPage
+  │   └── SettingsPage
+  ├── store/
+  │   ├── useTaskStore
+  │   ├── useProjectStore
+  │   └── useSettingsStore
+  ├── hooks/
+  ├── types/
+  └── utils/
+```
 
-### **Phase 5: Finalization & Deployment**
-- Conduct **testing & debugging**.
-- Optimize **performance & accessibility**.
-- Deploy to **Vercel, Netlify, or Firebase Hosting**.
+## Testing
 
----
+The application includes unit tests for components and integration tests for key features. Run tests with:
 
-## 4. Future Enhancements
-- Add **collaborative features** (real-time updates with WebSockets).
-- Implement **Google Calendar sync**.
-- Introduce **AI-powered task suggestions**.
+```bash
+npm run test
+```
 
----
+## Deployment
 
-Would you like me to generate an initial code structure for you? 🚀
+The app is configured for deployment to various platforms:
+- Vercel
+- Netlify
+- Firebase Hosting
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+
+MIT License - see LICENSE file for details
